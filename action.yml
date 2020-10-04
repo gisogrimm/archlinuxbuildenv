@@ -1,0 +1,11 @@
+name: 'archlinux build system'
+inputs:
+  buildcommand:  # id of input
+    description: 'build command'
+    required: true
+    default: 'ls'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.buildcommand }}
